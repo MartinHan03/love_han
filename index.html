@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #000;
+            overflow: hidden;
+        }
+        .son{
+            width: 170px;
+            height: 240px;
+            background-image: url(./image/tang.png);
+            background-position: 0px 0px;
+        }
+        .father{
+            height: 100vh;
+            margin-top: 30vh;
+            position: absolute;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son" style="float: left;"></div>
+        <div class="son" style="float: right;"></div>
+    </div>
+</body>
+<script>
+    var son1=document.querySelectorAll(".son")[0];
+    var son2=document.querySelectorAll(".son")[1];
+    var father = document.querySelector(".father");
+    father.style.width=innerWidth+170+"px"
+    var a=1190;
+    var b=-170;
+    setInterval(function(){
+        a=a-170
+        if(a<0){
+            a=1190
+        }
+        son1.style.backgroundPosition=a+"px 0px";
+        son2.style.backgroundPosition=a+"px 0px";
+        b=b-10
+        if(b<=-innerWidth){
+            b=0
+        }
+        father.style.left=b+"px"
+        father.style.width=innerWidth+170+"px"
+
+    },100)
+</script>
+</html>
